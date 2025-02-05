@@ -28,7 +28,7 @@ const carouselData = [
 
 const BusinessCarousel = () => {
   const swiperRef = useRef<SwiperClass | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [, setActiveIndex] = useState(0);
 
   const handleSlideChange = (swiper: SwiperClass) => {
     setActiveIndex(swiper.realIndex);
