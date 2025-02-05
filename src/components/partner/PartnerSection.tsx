@@ -12,7 +12,7 @@ export default function PartnersSection() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-white text-4xl md:text-5xl font-light mb-6">Our Partners</h2>
         <p className="text-gray-400 text-lg max-w-3xl mb-16">
-          Sprite Software's partners are the catalysts driving innovation, empowering businesses to unlock the full
+          Sprite Software&apos;s partners are the catalysts driving innovation, empowering businesses to unlock the full
           potential of AI and digital transformation through collaborative expertise.
         </p>
 

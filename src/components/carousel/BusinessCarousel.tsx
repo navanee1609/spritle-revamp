@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import type { Swiper as SwiperClass } from "swiper";
 
 // Import Images
 import nestle from "@/assets/business/nestle.png";
@@ -26,10 +27,10 @@ const carouselData = [
 ];
 
 const BusinessCarousel = () => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperClass | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperClass) => {
     setActiveIndex(swiper.realIndex);
   };
 
@@ -56,7 +57,7 @@ const BusinessCarousel = () => {
         }}
         className="w-full"
       >
-        {carouselData.map((item, index) => (
+        {carouselData.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="relative group overflow-hidden rounded-xl shadow-lg">
               {/* Image (Imported) */}
@@ -87,21 +88,13 @@ const BusinessCarousel = () => {
       <div className="absolute bottom-[-50px] right-0 flex space-x-4">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
-          className={`p-3 rounded-full flex items-center justify-center w-10 h-10 transition-colors duration-300 ${
-            activeIndex === 0 || !swiperRef.current?.isEnd
-              ? "bg-[#121212] text-white"
-              : "bg-[#15AED5] text-white"
-          } hover:bg-[#15AED5]`}
+          className="p-3 rounded-full flex items-center justify-center w-10 h-10 transition-colors duration-300 bg-[#121212] text-white hover:bg-[#15AED5]"
         >
           <FaChevronLeft size={16} />
         </button>
         <button
           onClick={() => swiperRef.current?.slideNext()}
-          className={`p-3 rounded-full flex items-center justify-center w-10 h-10 transition-colors duration-300 ${
-            activeIndex === carouselData.length - 1 || !swiperRef.current?.isBeginning
-              ? "bg-[#121212] text-white"
-              : "bg-[#15AED5] text-white"
-          } hover:bg-[#15AED5]`}
+          className="p-3 rounded-full flex items-center justify-center w-10 h-10 transition-colors duration-300 bg-[#15AED5] text-white hover:bg-[#121212]"
         >
           <FaChevronRight size={16} />
         </button>

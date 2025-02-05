@@ -35,11 +35,7 @@ export default function HeroSection() {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
   };
 
-  const prev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + texts.length) % texts.length
-    );
-  };
+ 
 
   const spring = {
     type: "spring",

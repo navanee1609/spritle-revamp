@@ -4,7 +4,6 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { TestimonialCard } from "./TestimonialCard"
 import testimonail1 from "../../assets/testimonial/testimonial1.png"
-import { StaticImageData } from "next/image"
 
 const testimonials = [
   {
@@ -64,7 +63,7 @@ export default function TestimonialsSection() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-white text-3xl md:text-4xl font-light mb-2">Our Customer Feedback</h2>
-            <p className="text-gray-400">Don't take our word for it. Trust our customers</p>
+            <p className="text-gray-400">Don&apos;t take our word for it. Trust our customers</p>
           </div>
           {/* Flexbox for prev/next buttons, aligned to the right */}
           <div className="hidden sm:flex gap-2">

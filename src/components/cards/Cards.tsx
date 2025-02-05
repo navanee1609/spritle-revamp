@@ -32,7 +32,7 @@ const Cards = () => {
               <div className="flex flex-col gap-6">
                 <h2 className="text-white text-2xl font-bold">Enterprise-Level Tech, Made Simple:</h2>
                 <p className="text-white text-md">
-                  Efficiently managing a large team demands a solid technological foundation. Our services offer robust, secure, and user-friendly solutions tailored to your needs. Picture a team of over 150 members, seamlessly collaborating with the aid of precisely crafted tools. This is the vision of future work that we're adept at bringing to fruition for enterprises.
+                  Efficiently managing a large team demands a solid technological foundation. Our services offer robust, secure, and user-friendly solutions tailored to your needs. Picture a team of over 150 members, seamlessly collaborating with the aid of precisely crafted tools. This is the vision of future work that we&apos;re adept at bringing to fruition for enterprises.
                 </p>
                 <p className="text-white text-md">
                   Large enterprise businesses that became our clients:
