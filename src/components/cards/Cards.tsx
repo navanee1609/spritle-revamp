@@ -23,7 +23,7 @@ const Cards = () => {
   return (
     <div className="py-16 px-4 rounded-lg">
       {/* Container with responsive max-width */}
-      <div className=" bg-[#101010] container mx-auto max-w-full lg:max-w-[85%] md:max-w-[85%] sm:max-w-[95%] rounded-md p-8">
+      <div className=" bg-[#101010] container mx-auto max-w-full lg:max-w-[90%] md:max-w-[85%] sm:max-w-[95%] rounded-md p-8">
         <div className="space-y-12">
           {/* First Card */}
           <div className="bg-[#101010] rounded-lg p-6 shadow-lg sticky top-24 z-10">
