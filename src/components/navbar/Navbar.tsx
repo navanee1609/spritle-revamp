@@ -89,7 +89,7 @@ const Navbar = () => {
           {/* Mobile & Tablet Contact Button */}
           <Link
             href="/contact"
-            className="text-white bg-accent py-2 px-4 rounded-full mt-4 text-center"
+            className="text-white bg-accent py-2 rounded-full w-52 mt-4 text-center justify-start items-start"
             onClick={toggleMenu}
           >
             Contact us
