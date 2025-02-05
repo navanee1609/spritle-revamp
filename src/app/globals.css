@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: 'DM Sans', sans-serif; /* Use the DM Sans font here */
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #252525; /* Primary color */
+    --secondary: #E2E2E2; /* Secondary color */
+    --accent: #14AED5; /* Accent color */
+    --background: #FFFFFF; /* Background color */
+    --foreground: #333333; /* Foreground color */
+    --radius: 0.5rem; /* Border radius */
+    /* Add any other colors or variables here */
+  }
+  
+  .dark {
+    --primary: #FFFFFF; /* Primary color for dark mode */
+    --secondary: #333333; /* Secondary color for dark mode */
+    --accent: #14AED5; /* Accent color for dark mode */
+    --background: #333333; /* Dark background */
+    --foreground: #FFFFFF; /* Light text for dark mode */
+    /* Add any other dark mode variables here */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border; /* Apply border color for all elements */
+  }
+
+  body {
+    @apply bg-background text-foreground; /* Apply background and text color */
+  }
 }
