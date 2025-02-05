@@ -1,3 +1,5 @@
+
+"use client"
 import { TextReveal } from "@/components/magicui/TextReveal";
 
 export function TextRevealDemo() {

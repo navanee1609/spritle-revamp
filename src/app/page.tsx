@@ -1,3 +1,4 @@
+"use client"
 import Cards from "@/components/cards/Cards";
 import BusinessCarousel from "@/components/carousel/BusinessCarousel";
 import Clients from "@/components/clients/Clients";

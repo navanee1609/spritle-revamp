@@ -1,3 +1,5 @@
+"use client"
+
 import { Star } from "lucide-react"
 import { FaStarHalfAlt } from "react-icons/fa"
 import Image, { StaticImageData } from "next/image"

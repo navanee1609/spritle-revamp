@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import zoho from "../../assets/partner/zoho.png"
 import freshworks from "../../assets/partner/freshworks.png"
