@@ -18,6 +18,7 @@ const texts = [
 
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageWidth, setImageWidth] = useState("80vw"); // Set a default width
   const autoSlideRef = useRef<() => void | null>(null);
   const transitionDuration = 0.3; // Duration in seconds
 
@@ -31,31 +32,33 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    // Check for client-side environment before using window
+    if (typeof window !== "undefined") {
+      const updateImageWidth = () => {
+        const width = window.innerWidth;
+        if (width < 768) {
+          setImageWidth("90vw"); // Mobile
+        } else if (width < 1024) {
+          setImageWidth("80vw"); // Tablet
+        } else {
+          setImageWidth("80vw"); // Desktop
+        }
+      };
+      updateImageWidth(); // Set initial width
+      window.addEventListener("resize", updateImageWidth); // Update width on window resize
+      return () => window.removeEventListener("resize", updateImageWidth); // Cleanup on unmount
+    }
+  }, []);
+
   const next = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
   };
-
- 
 
   const spring = {
     type: "spring",
     stiffness: 300,
     damping: 30,
-  };
-
-  // Function to get the image width based on screen size
-  const getImageWidth = () => {
-    if (typeof window !== "undefined") {
-      const width = window.innerWidth;
-      if (width < 768) {
-        return "90vw"; // Mobile
-      } else if (width < 1024) {
-        return "80vw"; // Tablet
-      } else {
-        return "80vw"; // Desktop
-      }
-    }
-    return "80vw"; // Default
   };
 
   return (
@@ -151,7 +154,7 @@ export default function HeroSection() {
               alt="Carousel"
               style={{
                 position: "absolute",
-                width: getImageWidth(), // Responsive width
+                width: imageWidth, // Responsive width
                 height: "100%",
                 maxHeight: "100%",
                 objectFit: "cover",
