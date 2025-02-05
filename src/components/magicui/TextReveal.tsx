@@ -1,5 +1,6 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { ComponentPropsWithoutRef, FC, ReactNode, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -47,7 +48,7 @@ export const TextReveal: FC<TextRevealProps> = ({ text, className }) => {
 
 interface WordProps {
   children: ReactNode;
-  progress: any;
+  progress: MotionValue<number>; // Replaced `any` with `MotionValue<number>`
   range: [number, number];
 }
 
